@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tv1, tv2, tv3, tv4, tv5, tv6, tv7;
+    TextView tv1, tv2, tv3, tv4, tv5, tv6;
     EditText et1, et2, et3;
     ImageView iv1, iv2, iv3;
     Button btn1, btn2, btn3, btn4;
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         tv4 = findViewById(R.id.tv4);
         tv5 = findViewById(R.id.tv5);
         tv6 = findViewById(R.id.tv6);
-        tv7 = findViewById(R.id.tv7);
 
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
@@ -149,42 +148,38 @@ public class MainActivity extends AppCompatActivity {
             iv3.setImageResource(R.drawable.x);
         }
 
-        tv7.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
 
         switch(count)
         {
-            case 0: tv7.setText("your score: 0/3, 0%");
+            case 0: btn4.setText("your score: 0/3, 0%");
                 break;
-            case 1: tv7.setText("your score: 1/3, 33%");
+            case 1: btn4.setText("your score: 1/3, 33%");
                 break;
-            case 2: tv7.setText("your score: 2/3, 66%");
+            case 2: btn4.setText("your score: 2/3, 66%");
                 break;
-            case 3: tv7.setText("your score: 3/3, 100%");
+            case 3: btn4.setText("your score: 3/3, 100%");
                 break;
         }
 
-        btn4.setVisibility(View.VISIBLE);
 
-        count = 0;
 
     }
 
 
         public void clicked4(View view)
         {
+            count = 0;
 
             tv3.setVisibility(View.INVISIBLE);
             tv4.setVisibility(View.INVISIBLE);
             tv5.setVisibility(View.INVISIBLE);
             tv6.setVisibility(View.INVISIBLE);
-            tv7.setVisibility(View.INVISIBLE);
 
             btn1.setVisibility(View.INVISIBLE);
-            btn3.setVisibility(View.INVISIBLE);
             btn2.setVisibility(View.INVISIBLE);
+            btn3.setVisibility(View.INVISIBLE);
             btn4.setVisibility(View.INVISIBLE);
-            btn3.setVisibility(View.INVISIBLE);
-            btn2.setVisibility(View.INVISIBLE);
 
             et1.setVisibility(View.INVISIBLE);
             et2.setVisibility(View.INVISIBLE);
