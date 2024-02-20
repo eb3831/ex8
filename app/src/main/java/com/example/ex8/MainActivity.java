@@ -28,31 +28,32 @@ public class MainActivity extends AppCompatActivity {
 
         tv1 = findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
-        et1 = findViewById(R.id.et1);
-        iv1 = findViewById(R.id.iv1);
-        btn1 = findViewById(R.id.btn1);
-
         tv3 = findViewById(R.id.tv3);
         tv4 = findViewById(R.id.tv4);
-        et2 = findViewById(R.id.et2);
-        iv2 = findViewById(R.id.iv2);
-        btn2 = findViewById(R.id.btn2);
-
         tv5 = findViewById(R.id.tv5);
         tv6 = findViewById(R.id.tv6);
-        et3 = findViewById(R.id.et3);
-        iv3 = findViewById(R.id.iv3);
-        btn3 = findViewById(R.id.btn3);
-
-        btn4 = findViewById(R.id.btn4);
-
         tv7 = findViewById(R.id.tv7);
 
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
+
+        et1 = findViewById(R.id.et1);
+        et2 = findViewById(R.id.et2);
+        et3 = findViewById(R.id.et3);
+
+        iv1 = findViewById(R.id.iv1);
+        iv2 = findViewById(R.id.iv2);
+        iv3 = findViewById(R.id.iv3);
+
         start();
+
     }
 
     public void start()
     {
+
         n1 = rnd.nextInt(89) + 10;
         n2 = rnd.nextInt(89) + 10;
         n4 = rnd.nextInt(89) + 10;
@@ -67,6 +68,104 @@ public class MainActivity extends AppCompatActivity {
 
         et1.setVisibility(View.VISIBLE);
         btn1.setVisibility(View.VISIBLE);
+
+    }
+
+    public void clicked1(View view)
+    {
+
+        String st1 = et1.getText().toString();
+        answer1 = Integer.parseInt(st1);
+
+        iv1.setVisibility(View.VISIBLE);
+
+        if (sum1==answer1)
+        {
+            count++;
+            iv1.setImageResource(R.drawable.v);
+        }
+        else
+        {
+            iv1.setImageResource(R.drawable.x);
+        }
+
+        tv3.setText(""+sum1);
+        tv4.setText(""+n4);
+
+        tv3.setVisibility(View.VISIBLE);
+        tv4.setVisibility(View.VISIBLE);
+
+        et2.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+
+    }
+
+
+    public void clicked2(View view)
+    {
+
+        String st2 = et2.getText().toString();
+        answer2 = Integer.parseInt(st2);
+
+        iv2.setVisibility(View.VISIBLE);
+
+        if (sum2==answer2)
+        {
+            count++;
+            iv2.setImageResource(R.drawable.v);
+        }
+        else
+        {
+            iv2.setImageResource(R.drawable.x);
+        }
+
+        tv5.setText(""+sum2);
+        tv6.setText(""+n6);
+
+        tv5.setVisibility(View.VISIBLE);
+        tv6.setVisibility(View.VISIBLE);
+
+        et3.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+
+    }
+
+
+    public void clicked3(View view)
+    {
+
+        String st3 = et3.getText().toString();
+        answer3 = Integer.parseInt(st3);
+
+        iv3.setVisibility(View.VISIBLE);
+
+        if (sum3==answer3)
+        {
+            count++;
+            iv3.setImageResource(R.drawable.v);
+        }
+        else
+        {
+            iv3.setImageResource(R.drawable.x);
+        }
+
+        tv7.setVisibility(View.VISIBLE);
+
+        switch(count)
+        {
+            case 0: tv7.setText("your score: 0/3, 0%");
+                break;
+            case 1: tv7.setText("your score: 1/3, 33%");
+                break;
+            case 2: tv7.setText("your score: 2/3, 66%");
+                break;
+            case 3: tv7.setText("your score: 3/3, 100%");
+                break;
+        }
+
+        btn4.setVisibility(View.VISIBLE);
+
+        count = 0;
 
     }
 
@@ -100,82 +199,8 @@ public class MainActivity extends AppCompatActivity {
             iv3.setVisibility(View.INVISIBLE);
 
             start();
+
         }
 
-        public void clicked1(View view)
-        {
-            String st1 = et1.getText().toString();
-            answer1 = Integer.parseInt(st1);
-
-            iv1.setVisibility(View.VISIBLE);
-            
-            if (sum1==answer1) {
-                count++;
-                iv1.setImageResource(R.drawable.v);}
-            else {
-                iv1.setImageResource(R.drawable.x);}
-
-            tv3.setText(""+sum1);
-            tv4.setText(""+n4);
-
-            tv3.setVisibility(View.VISIBLE);
-            tv4.setVisibility(View.VISIBLE);
-
-            et2.setVisibility(View.VISIBLE);
-            btn2.setVisibility(View.VISIBLE);
-
-            }
-
-        public void clicked2(View view)
-        {
-            String st2 = et2.getText().toString();
-            answer2 = Integer.parseInt(st2);
-
-            iv2.setVisibility(View.VISIBLE);
-
-            if (sum2==answer2) {
-                count++;
-                iv2.setImageResource(R.drawable.v);}
-            else {
-                iv2.setImageResource(R.drawable.x);}
-
-            tv5.setText(""+sum2);
-            tv6.setText(""+n6);
-
-            tv5.setVisibility(View.VISIBLE);
-            tv6.setVisibility(View.VISIBLE);
-
-            et3.setVisibility(View.VISIBLE);
-            btn3.setVisibility(View.VISIBLE);
-        }
-
-        public void clicked3(View view)
-        {
-            String st3 = et3.getText().toString();
-            answer3 = Integer.parseInt(st3);
-
-            iv3.setVisibility(View.VISIBLE);
-
-            if (sum3==answer3) {
-                count++;
-                iv3.setImageResource(R.drawable.v);}
-            else {
-                iv3.setImageResource(R.drawable.x);}
-
-            tv7.setVisibility(View.VISIBLE);
-
-            switch(count){
-                case 0: tv7.setText("your score: 0/3, 0%");
-                break;
-                case 1: tv7.setText("your score: 1/3, 33%");
-                break;
-                case 2: tv7.setText("your score: 2/3, 66%");
-                break;
-                case 3: tv7.setText("your score: 3/3, 100%");
-                break;
-            }
-
-            btn4.setVisibility(View.VISIBLE);
-            count = 0;
-        }
 }
+
